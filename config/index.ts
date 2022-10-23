@@ -1,36 +1,29 @@
 import { Options } from '../types';
 
 export const options: Options = {
-    repoString: 'mygithub/myrepo', // GitHub owner/repository
-    connectionArn: 'arn:aws:codestar-connections:ap-southeast-1:444444444444:connection/xxxxxxxxxxxxxxxxxx', // CodeStar GitHub connection ARN
+    repoString: 'sebastianPajes/aws-cdk-pipeline-test', // GitHub owner/repository
+    connectionArn: 'arn:aws:codestar-connections:us-east-1:275179852100:connection/bce69f03-7c8d-4d70-8f74-04b9218cd0cc', // CodeStar GitHub connection ARN
     version: '1', // Increment to trigger a pipeline deployment
-    defaultRegion: 'ap-southeast-1',
-    toolsAccount: '444444444444', // Account where Pipelines are deployed
+    defaultRegion: 'us-east-1',
+    toolsAccount: '275179852100', // Account where Pipelines are deployed
     appPipelines: [
         {
-            name: 'dev', // Dev environment
-            account: '111111111111',
-            branch: 'dev',
+            name: 'sandbox', // Dev environment
+            account: '482047510037',
+            branch: 'sandbox',
             preApproval: false, // Require approval before Create Change Set
         },
         {
-            name: 'uat', // UAT/QA environment
-            account: '222222222222',
-            branch: 'uat',
+            name: 'staging', // UAT/QA environment
+            account: '651997905879',
+            branch: 'staging',
             preApproval: false,
         },
         {
             name: 'prod', // Production environment
-            account: '333333333333',
+            account: '145474670446',
             branch: 'main',
             preApproval: true,
-        },
-        {
-            name: 'prod', // Production environment
-            account: '333333333333',
-            region: 'ap-southeast-2',
-            branch: 'main',
-            preApproval: true,
-        },
+        }
     ],
 };
